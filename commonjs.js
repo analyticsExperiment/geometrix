@@ -69,6 +69,7 @@ window.globalVariablesSetup = function globalVariablesSetup(){
         //Home Page
         window.digitalData.page.pageInfo.name = 'home';
         window.digitalData.page.pageInfo.pageType = 'home';
+        window.digitalData.page.pageInfo.siteSection = 'home';
     }
     else{
         window.digitalData.page.pageInfo.name = lastValue.replace('.html','').replace('#','').trim();
