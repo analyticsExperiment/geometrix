@@ -68,11 +68,11 @@ window.globalVariablesSetup = function globalVariablesSetup(){
   if(lastValue){
     if(lastValue.indexOf('index') > -1){
         //Home Page
-        window.digitalData.page.name = 'home';
-        window.digitalData.page.pageType = 'home';
+        window.digitalData.page.pageInfo.name = 'home';
+        window.digitalData.page.pageInfo.pageType = 'home';
     }
     else{
-        window.digitalData.page.name = lastValue.replace('.html','').replace('#','').trim();
+        window.digitalData.page.pageInfo.name = lastValue.replace('.html','').replace('#','').trim();
     }
   }
 
@@ -105,3 +105,5 @@ var script = document.createElement('script');
 script.src = "https://assets.adobedtm.com/6d07e8369d1a/eddfb18269bf/launch-192d54330977-development.min.js";
 script.async = true;
 document.head.appendChild(script);
+
+//Deep Analysis - Experiment
