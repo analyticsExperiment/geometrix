@@ -81,8 +81,8 @@ window.globalVariablesSetup = function globalVariablesSetup(){
   var previousPageInfo = sessionStorage.getItem('previousPageInfo') ? JSON.parse(sessionStorage.getItem('previousPageInfo')) : '';
   if(previousPageInfo){
     //Already a page is viewed before
-    window.digitalData.previousPageInfo = previousPageInfo;
-    var pageInfo = window.digitalData.page ? window.digitalData.page : '';
+    window.digitalData.page.previousPageInfo = previousPageInfo;
+    var pageInfo = window.digitalData.page ? window.digitalData.page.pageInfo : '';
     //Setting up the previousPageInfo object with present page information which can be used in next page as previous page info
     if(pageInfo){
         sessionStorage.setItem('previousPageInfo',JSON.stringify(pageInfo));
@@ -90,7 +90,7 @@ window.globalVariablesSetup = function globalVariablesSetup(){
   }
   else{
     //landing page
-    var pageInfo = window.digitalData.page ? window.digitalData.page : '';
+    var pageInfo = window.digitalData.page ? window.digitalData.page.pageInfo : '';
     if(pageInfo){
         sessionStorage.setItem('previousPageInfo',JSON.stringify(pageInfo));
     }
