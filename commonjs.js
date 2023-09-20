@@ -57,7 +57,6 @@ window.genericFunctions = {
                               return undefined;
                             }
                         }
- 
 };
 
 
@@ -100,10 +99,24 @@ window.globalVariablesSetup = function globalVariablesSetup(){
 //Calling the Variables Setup
 window.globalVariablesSetup();
 
+//DataLayer - On Page Load - Page Info
+window.dataLayer = [];
+window.dataLayer.push({
+  'event' : 'Page Details',
+  'data' : window.digitalData
+});
+
 //Launch Injection
 var script = document.createElement('script');
 script.src = "https://assets.adobedtm.com/6d07e8369d1a/eddfb18269bf/launch-192d54330977-development.min.js";
 script.async = true;
 document.head.appendChild(script);
+
+//GTM Injection
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NM6N9BRD');
 
 //Deep Analysis - Experiment
