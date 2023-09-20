@@ -5,7 +5,9 @@ window.digitalData = {
         "pageType": "",
         "siteSection": "",
         "url": window.location.href ,
-        "fullPageUrl": window.location.href
+        "fullPageUrl": window.location.href,
+        "siteSubsection" : "",
+        "server" : "Geometrixx Clothiers Site"
       },
       "previousPageInfo": {
         "name": "",
