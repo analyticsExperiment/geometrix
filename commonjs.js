@@ -25,6 +25,12 @@ window.digitalData = {
       "profileID": "",
       "userType": "Guest",
       "deviceType": "Desktop"
+    },
+    "event" : {
+      'eventCategory' : "",
+      'eventAction' : "",
+      'eventLabel' : "",
+      'eventParameter1' : ""
     }
    };
 
@@ -60,7 +66,14 @@ window.genericFunctions = {
                             else{
                               return undefined;
                             }
-                        }
+                        },
+    'eventPush' : function eventPush(category, action, label, parameter1){
+                     digitalData.event.eventCategory = category ? category : 'Category not defined';
+                     digitalData.event.eventAction = action ? action : 'Action not defined';
+                     digitalData.event.eventLabel = label ? label : 'Label not defined';
+                     digitalData.event.eventParameter1 = parameter1 ? parameter1 : 'Parameter1 not defined';
+                     _satellite.track('customEvent');
+                  }
 };
 
 
@@ -125,4 +138,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NM6N9BRD');
 
 //Global Components - Tracking
-
+//Header Tracking
+var headerLinks = document.querySelectorAll('.head_tabs_bar a');
+for(var i = 0; i < headerLinks.length; i++){
+  headerLinks[i].addEventListener('click',function(e){
+    var clickText = e.target.innerText,
+        subMenu = '';
+    if(e.target.closest('.sub_menu')){
+      //The Submenu link is interacted
+      subMenu = e.target.closest('.sub_menu').parentNode.querySelector('.menu').innerText;
+      window.genericFunctions.eventPush('HeaderInteraction',subMenu, clickText, 'SubMenu_Interaction');
+    }
+    window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
+  });
+}
