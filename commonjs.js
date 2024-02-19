@@ -139,16 +139,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 //Global Components - Tracking
 //Header Tracking
-var headerLinks = document.querySelectorAll('.head_tabs_bar a');
-for(var i = 0; i < headerLinks.length; i++){
-  headerLinks[i].addEventListener('click',function(e){
-    var clickText = e.target.innerText,
-        subMenu = '';
-    if(e.target.closest('.sub_menu')){
-      //The Submenu link is interacted
-      subMenu = e.target.closest('.sub_menu').parentNode.querySelector('.menu').innerText;
-      window.genericFunctions.eventPush('HeaderInteraction',subMenu, clickText, 'SubMenu_Interaction');
-    }
-    window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
-  });
-}
+window.addEventListener('load',function(e){
+  var headerLinks = document.querySelectorAll('.head_tabs_bar a');
+  for(var i = 0; i < headerLinks.length; i++){
+    headerLinks[i].addEventListener('click',function(e){
+      var clickText = e.target.innerText,
+          subMenu = '';
+      if(e.target.closest('.sub_menu')){
+        //The Submenu link is interacted
+        subMenu = e.target.closest('.sub_menu').parentNode.querySelector('.menu').innerText;
+        window.genericFunctions.eventPush('HeaderInteraction',subMenu, clickText, 'SubMenu_Interaction');
+      }
+      window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
+    });
+  }
+});
