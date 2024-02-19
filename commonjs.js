@@ -148,6 +148,7 @@ window.addEventListener('load',function(e){
       if(e.target.closest('.sub_menu')){
         //The Submenu link is interacted
         subMenu = e.target.closest('.sub_menu').parentNode.querySelector('.menu').innerText;
+        //Event Push function is used to update the dataLayer & fire the tag to Adobe Analytics
         window.genericFunctions.eventPush('HeaderInteraction',subMenu, clickText, 'SubMenu_Interaction');
       }
       window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
