@@ -151,7 +151,9 @@ window.addEventListener('load',function(e){
         //Event Push function is used to update the dataLayer & fire the tag to Adobe Analytics
         window.genericFunctions.eventPush('HeaderInteraction',subMenu, clickText, 'SubMenu_Interaction');
       }
-      window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
+      else{
+        window.genericFunctions.eventPush('HeaderInteraction','click',clickText, 'Menu_Interaction');
+      } 
     });
   }
 });
