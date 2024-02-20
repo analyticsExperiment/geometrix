@@ -30,7 +30,8 @@ window.digitalData = {
       'eventCategory' : "",
       'eventAction' : "",
       'eventLabel' : "",
-      'eventParameter1' : ""
+      'eventParameter1' : "",
+      'eventParameter2' : ""
     }
    };
 
