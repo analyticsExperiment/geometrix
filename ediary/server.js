@@ -1,9 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs-extra');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DATA_FILE = './entries.json';
+const DATA_FILE = path.join(__dirname, 'entries.json');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

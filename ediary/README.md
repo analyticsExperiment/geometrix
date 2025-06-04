@@ -5,7 +5,7 @@ Simple diary web application using Node.js with Express for the backend and Boot
 ## Setup
 
 1. Install dependencies: `npm install`.
-2. Start the server: `node server.js`.
+2. Start the server from this directory with `node server.js`.
 3. Visit `http://localhost:3000` in your browser.
 
 The homepage lets you add diary entries, browse them on a calendar and view a

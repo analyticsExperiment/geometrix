@@ -1,4 +1,6 @@
+# Ignore Node.js dependencies
 node_modules/
-*.log
+**/node_modules/
 
-**/node_modules
+# Ignore log files
+*.log
