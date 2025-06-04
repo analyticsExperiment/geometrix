@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eDiary</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+  <style>
+    #calendar { max-width: 900px; margin: 0 auto; }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-4">eDiary</h1>
+    <ul class="nav nav-tabs" id="viewTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="entries-tab" data-toggle="tab" href="#entriesView" role="tab">Entries</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="calendar-tab" data-toggle="tab" href="#calendarView" role="tab">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="analytics-tab" data-toggle="tab" href="#analyticsView" role="tab">Analytics</a>
+      </li>
+    </ul>
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="entriesView" role="tabpanel">
+        <form id="entry-form" class="mb-4">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <input type="date" id="date" class="form-control" required>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" id="title" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" id="content" class="form-control" placeholder="Content" required>
+            </div>
+            <div class="form-group col-md-2">
+              <button class="btn btn-primary btn-block" type="submit">Add Entry</button>
+            </div>
+          </div>
+        </form>
+        <ul id="entries" class="list-group"></ul>
+      </div>
+      <div class="tab-pane fade" id="calendarView" role="tabpanel">
+        <div id="calendar"></div>
+      </div>
+      <div class="tab-pane fade" id="analyticsView" role="tabpanel">
+        <canvas id="chart" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
