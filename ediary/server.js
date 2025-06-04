@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 const DATA_FILE = './entries.json';
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 fs.ensureFileSync(DATA_FILE);
 
@@ -30,7 +31,7 @@ app.post('/api/entries', (req, res) => {
     id: Date.now(),
     title: req.body.title || '',
     content: req.body.content || '',
-    date: new Date().toISOString(),
+    date: req.body.date ? new Date(req.body.date).toISOString() : new Date().toISOString(),
   };
   entries.push(entry);
   writeEntries(entries);

@@ -1,6 +1,6 @@
 # eDiary
 
-Simple diary web application using Node.js with Express for the backend and Bootstrap/jQuery for the frontend.
+Simple diary web application using Node.js with Express for the backend and Bootstrap/jQuery for the frontend. It includes a calendar view and basic analytics.
 
 ## Setup
 
@@ -8,4 +8,6 @@ Simple diary web application using Node.js with Express for the backend and Boot
 2. Start the server: `node server.js`.
 3. Visit `http://localhost:3000` in your browser.
 
-Entries are stored in `entries.json`.
+The homepage lets you add diary entries, browse them on a calendar and view a
+simple chart of how many entries you made each day. Entries are stored in
+`entries.json`.
