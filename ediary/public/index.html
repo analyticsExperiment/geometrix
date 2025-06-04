@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eDiary</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-4">eDiary</h1>
+    <form id="entry-form" class="mb-4">
+      <div class="form-group">
+        <input type="text" id="title" class="form-control" placeholder="Entry Title" required>
+      </div>
+      <div class="form-group">
+        <textarea id="content" class="form-control" rows="3" placeholder="Entry Content" required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Add Entry</button>
+    </form>
+    <ul id="entries" class="list-group"></ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
